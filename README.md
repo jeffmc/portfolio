@@ -5,3 +5,6 @@
 
 ## [Binomial Distribution](https://editor.p5js.org/chuffrey/sketches/DlLJtBOoy)
 ![binomial probabilities](https://user-images.githubusercontent.com/10823453/211907913-8bc7b21b-cd19-4470-8be0-5d8b1d0f87e7.png)
+
+## [Delaunay triangulation](https://editor.p5js.org/chuffrey/sketches/LgjVBjwf_)
+![delaunay triangulation](https://user-images.githubusercontent.com/10823453/213019591-220f8cdd-52b3-494b-b9f5-7cfebca55e6e.png)

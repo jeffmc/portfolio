@@ -8,3 +8,6 @@
 
 ## [Delaunay triangulation](https://editor.p5js.org/chuffrey/sketches/LgjVBjwf_)
 ![delaunay triangulation](https://user-images.githubusercontent.com/10823453/213019591-220f8cdd-52b3-494b-b9f5-7cfebca55e6e.png)
+
+## [Urquhart Digraph](https://editor.p5js.org/chuffrey/sketches/8hAYI-32e)
+![urquhartDigraph](https://user-images.githubusercontent.com/10823453/213815695-3b67ea01-43c7-4f3b-bdc7-8369d526ea7d.png)

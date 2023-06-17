@@ -19,4 +19,5 @@
 ![barnsleys fern](https://user-images.githubusercontent.com/10823453/216265939-4a1c9707-4488-4cd0-a9cb-0ff88fc52e28.png)
 
 ## [Isolines](https://editor.p5js.org/chuffrey/sketches/1uFgv3KH_)
-![isolines](https://github.com/jeffmc/portfolio/assets/10823453/4fc3976a-f850-4702-9b35-5fc4a2c1b40f)
+![isolines](https://github.com/jeffmc/portfolio/assets/10823453/7f438a68-9c63-4bf6-b5c7-eb8007becf7e)
+

@@ -21,3 +21,5 @@
 ## [Isolines](https://editor.p5js.org/chuffrey/sketches/1uFgv3KH_)
 ![isolines](https://github.com/jeffmc/portfolio/assets/10823453/7f438a68-9c63-4bf6-b5c7-eb8007becf7e)
 
+## [Floyd–Steinberg dithering](https://editor.p5js.org/chuffrey/sketches/x9pI3AUTZ)
+![floyd steinberg dithering](https://github.com/jeffmc/portfolio/assets/10823453/a30f5b88-b3b9-497a-964b-0748485f34a0)

@@ -23,3 +23,6 @@
 
 ## [Floyd–Steinberg dithering](https://editor.p5js.org/chuffrey/sketches/x9pI3AUTZ)
 ![floyd steinberg dithering](https://github.com/jeffmc/portfolio/assets/10823453/a30f5b88-b3b9-497a-964b-0748485f34a0)
+
+## [Hilbert Curve](https://editor.p5js.org/chuffrey/sketches/iGFH_bel6)
+![hilbert curve](https://github.com/jeffmc/portfolio/assets/10823453/ed45ea40-f149-4ae8-8632-2c6d59d5edb9)

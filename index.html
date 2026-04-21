@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spherical Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="scene-wrapper">
+    <div class="hint">Click &amp; drag to rotate &nbsp;|&nbsp; Scroll to zoom</div>
+
+    <div class="scene" id="scene">
+      <div class="globe" id="globe">
+
+        <!-- Each panel is a section of the portfolio placed on the sphere surface -->
+
+        <div class="panel" data-lat="0" data-lon="0">
+          <div class="panel-inner hero">
+            <h1>Jane Doe</h1>
+            <p>Full-Stack Developer &amp; Designer</p>
+            <a href="#" class="btn">View Work</a>
+          </div>
+        </div>
+
+        <div class="panel" data-lat="0" data-lon="72">
+          <div class="panel-inner about">
+            <h2>About</h2>
+            <p>I craft beautiful, performant web experiences with a focus on accessibility and clean code.</p>
+            <ul>
+              <li>5+ years experience</li>
+              <li>Open-source contributor</li>
+              <li>Coffee enthusiast</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="panel" data-lat="0" data-lon="144">
+          <div class="panel-inner skills">
+            <h2>Skills</h2>
+            <div class="skill-grid">
+              <span>HTML/CSS</span><span>JavaScript</span>
+              <span>React</span><span>Node.js</span>
+              <span>Python</span><span>PostgreSQL</span>
+              <span>Figma</span><span>Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" data-lat="0" data-lon="216">
+          <div class="panel-inner projects">
+            <h2>Projects</h2>
+            <div class="project-item">
+              <strong>NovaBlog</strong>
+              <p>Headless CMS &amp; blog platform built with Next.js &amp; Sanity.</p>
+            </div>
+            <div class="project-item">
+              <strong>WeatherSphere</strong>
+              <p>Real-time weather globe using WebGL &amp; open APIs.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" data-lat="0" data-lon="288">
+          <div class="panel-inner contact">
+            <h2>Contact</h2>
+            <p>Let's build something great together.</p>
+            <a href="mailto:jane@example.com" class="btn">jane@example.com</a>
+            <div class="social-links">
+              <a href="#">GitHub</a>
+              <a href="#">LinkedIn</a>
+              <a href="#">Twitter</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top cap -->
+        <div class="panel" data-lat="60" data-lon="36">
+          <div class="panel-inner accent">
+            <h3>2024</h3>
+            <p>Available for freelance &amp; full-time roles</p>
+          </div>
+        </div>
+
+        <!-- Bottom cap -->
+        <div class="panel" data-lat="-60" data-lon="108">
+          <div class="panel-inner accent dark">
+            <h3>Remote-first</h3>
+            <p>Based in San Francisco · Open to relocate</p>
+          </div>
+        </div>
+
+      </div><!-- /.globe -->
+    </div><!-- /.scene -->
+  </div><!-- /.scene-wrapper -->
+
+  <script src="script.js"></script>
+</body>
+</html>

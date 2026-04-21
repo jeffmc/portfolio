@@ -1,44 +1,11 @@
-/**
- * Spherical Portfolio
- *
- * Each .panel element carries data-lat / data-lon (degrees).
- * We convert those to a CSS transform that:
- *   1. Rotates the element to its longitude around Y
- *   2. Rotates it to its latitude around X
- *   3. Translates it outward by the sphere radius
- *   4. Adds a small counter-rotation so the card face stays readable
- */
-
-const RADIUS = 340; // must match --radius in CSS
+const RADIUS = 340;
 const globe  = document.getElementById('globe');
 
-/* ── Place panels on the sphere ─────────────────────────── */
 function placePanels() {
   document.querySelectorAll('.panel').forEach(panel => {
     const lat = parseFloat(panel.dataset.lat) || 0;
     const lon = parseFloat(panel.dataset.lon) || 0;
-
-    // Convert to radians for trig (used to optionally offset positions)
-    const latR = (lat * Math.PI) / 180;
-    const lonR = (lon * Math.PI) / 180;
-
-    // Spherical → Cartesian (for reference / future use)
-    // x = R·cos(lat)·sin(lon), y = -R·sin(lat), z = R·cos(lat)·cos(lon)
-
-    /*
-     * CSS 3-D transform pipeline:
-     *   rotateY(lon)      — spin to the right longitude
-     *   rotateX(-lat)     — tilt to the right latitude
-     *   translateZ(R)     — push outward to sphere surface
-     *
-     * The panel naturally faces the camera (outward normal),
-     * because translateZ pushes it away from the centre.
-     */
-    panel.style.transform = `
-      rotateY(${lon}deg)
-      rotateX(${-lat}deg)
-      translateZ(${RADIUS}px)
-    `;
+    panel.style.transform = `rotateY(${lon}deg) rotateX(${-lat}deg) translateZ(${RADIUS}px)`;
   });
 }
 
@@ -151,34 +118,43 @@ window.addEventListener('touchend',   onPointerUp);
 // Start auto-spin after initial 3s of no interaction
 resetIdle();
 
-/* ── Subtle star canvas background ──────────────────────── */
+/* ── Pixel star canvas ───────────────────────────────────── */
 (function drawStars() {
   const canvas = document.createElement('canvas');
-  canvas.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0.55';
+  canvas.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:0';
   document.body.prepend(canvas);
 
   const ctx = canvas.getContext('2d');
-  let stars = [];
+  const GRID = 16; // pixels between possible star positions
+  let stars  = [];
 
   function resize() {
     canvas.width  = window.innerWidth;
     canvas.height = window.innerHeight;
-    stars = Array.from({ length: 180 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 1.2 + 0.2,
-      o: Math.random() * 0.7 + 0.2,
-    }));
+
+    // Place stars on a grid with ~12% fill so they feel pixel-aligned
+    const cols = Math.ceil(canvas.width  / GRID);
+    const rows = Math.ceil(canvas.height / GRID);
+    stars = [];
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        if (Math.random() > 0.12) continue;
+        stars.push({
+          x: c * GRID,
+          y: r * GRID,
+          s: Math.random() < 0.2 ? 2 : 1,           // 1 or 2 px square
+          o: Math.random() * 0.55 + 0.15,
+        });
+      }
+    }
     render();
   }
 
   function render() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     stars.forEach(s => {
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255,255,255,${s.o})`;
-      ctx.fill();
+      ctx.fillStyle = `rgba(200,200,255,${s.o})`;
+      ctx.fillRect(s.x, s.y, s.s, s.s);             // square pixels, no anti-alias
     });
   }
 
